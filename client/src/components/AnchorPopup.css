@@ -1,0 +1,55 @@
+.anchor-popup {
+  position: fixed;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 400px;
+  max-height: 300px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.popup-header {
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.popup-date {
+  font-size: 12px;
+  color: #999;
+  padding: 4px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.popup-content {
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  overflow-y: auto;
+  max-height: 200px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.popup-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
