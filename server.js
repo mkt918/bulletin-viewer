@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from React build
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
 // Memory cache for thread data
 const cache = {};
 
@@ -86,12 +90,9 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    error: 'Not found'
-  });
+// Serve React index.html for all other routes (SPA fallback)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
 // Error handling middleware

@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "build": "cd client && npm install && npm run build",
+    "start": "npm run build && node server.js",
     "dev": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm install"
   },
   "keywords": [],
   "author": "",
